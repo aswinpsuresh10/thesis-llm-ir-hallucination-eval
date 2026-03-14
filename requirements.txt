@@ -1,86 +1,44 @@
 # ───────────────────────────────────────────
-# Python
+# Core
 # ───────────────────────────────────────────
-__pycache__/
-*.py[cod]
-*$py.class
-*.pyo
-*.pyd
-.Python
-env/
-venv/
-.venv/
-ENV/
-*.egg-info/
-dist/
-build/
-.eggs/
+numpy
+pandas
+scipy
+scikit-learn
 
 # ───────────────────────────────────────────
-# Jupyter Notebooks
+# LLM & NLP
 # ───────────────────────────────────────────
-.ipynb_checkpoints/
-*.ipynb_checkpoints
-# Uncomment below to ignore all outputs in notebooks (recommended for large outputs)
-# *.ipynb
+transformers
+torch
+sentence-transformers
+openai                  # If using OpenAI models
+huggingface-hub
 
 # ───────────────────────────────────────────
-# Data & Large Files (use Git LFS or external storage instead)
+# Semantic Similarity Metrics
 # ───────────────────────────────────────────
-data/raw/
-data/processed/
-*.csv
-*.tsv
-*.json
-*.jsonl
-*.parquet
-*.h5
-*.hdf5
-*.pkl
-*.pickle
-*.zip
-*.tar.gz
-*.gz
+rouge-score
+nltk
+bert-score
 
 # ───────────────────────────────────────────
-# Model Weights & Outputs
+# Bias Detection (WEAT / SEAT)
 # ───────────────────────────────────────────
-*.bin
-*.pt
-*.pth
-*.ckpt
-*.safetensors
-models/weights/
+weat-seat               # or implement manually via sentence-transformers
 
 # ───────────────────────────────────────────
-# Environment & Secrets
+# Notebooks & Visualization
 # ───────────────────────────────────────────
-.env
-.env.*
-*.key
-secrets.yaml
-config/local_config.yaml
+jupyter
+ipykernel
+matplotlib
+seaborn
+plotly
 
 # ───────────────────────────────────────────
-# VS Code
+# Utilities
 # ───────────────────────────────────────────
-.vscode/
-*.code-workspace
-
-# ───────────────────────────────────────────
-# OS Files
-# ───────────────────────────────────────────
-.DS_Store
-Thumbs.db
-desktop.ini
-
-# ───────────────────────────────────────────
-# Logs & Temp
-# ───────────────────────────────────────────
-*.log
-*.tmp
-*.temp
-logs/
-wandb/
-mlruns/
-.cache/
+tqdm
+python-dotenv
+pyyaml
