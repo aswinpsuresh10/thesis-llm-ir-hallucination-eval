@@ -1,44 +1,39 @@
-# ───────────────────────────────────────────
-# Core
-# ───────────────────────────────────────────
-numpy
-pandas
-scipy
-scikit-learn
+# requirements.txt
+# ─────────────────────────────────────────────────────────────────────────────
+# Install with: pip install -r requirements.txt
+# Tested on Python 3.10+
+# ─────────────────────────────────────────────────────────────────────────────
 
-# ───────────────────────────────────────────
-# LLM & NLP
-# ───────────────────────────────────────────
-transformers
-torch
-sentence-transformers
-openai                  # If using OpenAI models
-huggingface-hub
+# ── Core ──────────────────────────────────────────────────────────────────────
+numpy>=1.24
+pandas>=2.0
+scipy>=1.11
+scikit-learn>=1.3
+tqdm>=4.66
+python-dotenv>=1.0
+pyyaml>=6.0
 
-# ───────────────────────────────────────────
-# Semantic Similarity Metrics
-# ───────────────────────────────────────────
-rouge-score
-nltk
-bert-score
+# ── HuggingFace / Transformers (GPT-J) ───────────────────────────────────────
+transformers>=4.40
+torch>=2.1
+accelerate>=0.27
+bitsandbytes>=0.43          # 8-bit quantisation for GPT-J
+datasets>=2.18
+huggingface-hub>=0.22
+sentencepiece>=0.1.99       # Required by some tokenisers
 
-# ───────────────────────────────────────────
-# Bias Detection (WEAT / SEAT)
-# ───────────────────────────────────────────
-weat-seat               # or implement manually via sentence-transformers
+# ── Google Gemini ─────────────────────────────────────────────────────────────
+google-generativeai>=0.5
 
-# ───────────────────────────────────────────
-# Notebooks & Visualization
-# ───────────────────────────────────────────
-jupyter
-ipykernel
-matplotlib
-seaborn
-plotly
+# ── Semantic Similarity Metrics ───────────────────────────────────────────────
+rouge-score>=0.1.3
+nltk>=3.8
+bert-score>=0.3.13
+sentence-transformers>=2.7   # Used by SEAT and BERTScore fallback
 
-# ───────────────────────────────────────────
-# Utilities
-# ───────────────────────────────────────────
-tqdm
-python-dotenv
-pyyaml
+# ── Bias Detection ────────────────────────────────────────────────────────────
+# WEAT and SEAT are implemented from scratch in src/evaluation/bias_detection.py
+# using sentence-transformers (already listed above) — no extra package needed.
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+pathlib2>=2.3; python_version < "3.4"

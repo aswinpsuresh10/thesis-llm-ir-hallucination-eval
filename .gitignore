@@ -57,6 +57,7 @@ models/weights/
 # ───────────────────────────────────────────
 .env
 .env.*
+!.env.example          # Keep the example template tracked
 *.key
 secrets.yaml
 config/local_config.yaml
@@ -84,3 +85,24 @@ logs/
 wandb/
 mlruns/
 .cache/
+
+# ───────────────────────────────────────────
+# Pipeline Results & Outputs
+# (large files — share via Google Drive / Zenodo instead)
+# ───────────────────────────────────────────
+results/
+!results/.gitkeep      # Keep the folder itself tracked
+
+# ───────────────────────────────────────────
+# HuggingFace Model Cache
+# ───────────────────────────────────────────
+.huggingface/
+~/.cache/huggingface/
+
+# ───────────────────────────────────────────
+# Python Virtual Environments
+# ───────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
